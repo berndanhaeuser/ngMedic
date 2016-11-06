@@ -1,0 +1,35 @@
+<div class="demo-container" mdl-shadow="2">
+    <mdl-layout mdl-layout-fixed-header>
+        <mdl-layout-header>
+            <mdl-layout-header-row>
+                <mdl-layout-title>Title</mdl-layout-title>
+                <mdl-layout-spacer></mdl-layout-spacer>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+
+                    <a routerLink="start" class="mdl-navigation__link">Home</a>
+                    <a routerLink="persons" class="mdl-navigation__link">Personen</a>
+                    <a routerLink="test" class="mdl-navigation__link">Test</a>
+
+                </nav>
+            </mdl-layout-header-row>
+        </mdl-layout-header>
+        <mdl-layout-drawer>
+            <mdl-layout-title>Title</mdl-layout-title>
+            <nav class="mdl-navigation">
+                <a routerLink="start" class="mdl-navigation__link">Home</a>
+                <a routerLink="persons" class="mdl-navigation__link">Personen</a>
+                <a routerLink="test" class="mdl-navigation__link">Test</a>
+            </nav>
+        </mdl-layout-drawer>
+        <mdl-layout-content class="demo-content">
+            <div class="mdl-layout mdl-js-layout">
+                <main class="mdl-layout__content" style="margin-left: 20px;">
+                    <router-outlet></router-outlet>
+                </main>
+            </div>
+        </mdl-layout-content>
+    </mdl-layout>
+</div>
+
+

@@ -1,0 +1,16 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h3 class="display-3">Personen</h3>
+<mdl-list>
+
+    <mdl-list-item lines="2" mdl-ripple *ngFor="let rowPerson of personenArray">
+        <mdl-list-item-primary-content>
+            <mdl-icon mdl-list-item-avatar>person</mdl-icon>
+            <span>{{rowPerson.name}}</span>
+            <mdl-list-item-sub-title>{{rowPerson.id}}</mdl-list-item-sub-title>
+        </mdl-list-item-primary-content>
+        <mdl-list-item-secondary-content>
+            <mdl-list-item-secondary-info>Actions</mdl-list-item-secondary-info>
+            <a href="#" (click)="onClick(rowPerson)"><mdl-icon>star</mdl-icon></a>
+        </mdl-list-item-secondary-content>
+    </mdl-list-item>
+</mdl-list>
