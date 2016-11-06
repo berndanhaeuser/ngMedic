@@ -7,27 +7,28 @@ import { AppComponent } from './app.component';
 import { SdktestComponent } from './sdktest/sdktest.component';
 import {CommonModule} from "@angular/common";
 import {SDKModule} from "./shared/sdk/index";
-import { PersonsComponent } from './persons/persons.component';
 import {RouterModule} from "@angular/router";
 import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
-import {MdlModule} from "angular2-mdl";
+import {MdlModule, MdlDialogOutletService} from "angular2-mdl";
 import { StartPageComponent } from './start-page/start-page.component';
 import { IndextestComponent } from './indextest/indextest.component';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
-import {Person} from "./shared/sdk/models/Person";
+import { PrimengdtComponent } from './primengdt/primengdt.component';
+import {DataTableModule} from "primeng/components/datatable/datatable";
 
 @NgModule({
   declarations: [
     AppComponent,
     SdktestComponent,
-    PersonsComponent,
     RouteNotFoundComponent,
     StartPageComponent,
     IndextestComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    PrimengdtComponent
   ],
   imports: [
     BrowserModule,
+      DataTableModule,
     FormsModule,
     HttpModule,
     CommonModule,
@@ -35,14 +36,15 @@ import {Person} from "./shared/sdk/models/Person";
     RouterModule.forRoot([
       { path: '', redirectTo: '/start', pathMatch: 'full'},
       { path: 'start', component: StartPageComponent },
-      { path: 'persons', component: PersonsComponent },
+      { path: 'persons', component: PrimengdtComponent },
       { path: 'persons/:id', component: PersonDetailComponent },
       { path: 'test', component: IndextestComponent },
+      { path: 'primengdt', component: PrimengdtComponent },
       { path: '**', component: RouteNotFoundComponent }
     ]),
       MdlModule
   ],
-  providers: [],
+  providers: [MdlDialogOutletService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

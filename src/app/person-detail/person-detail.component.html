@@ -1,3 +1,51 @@
-<p>
-  Person: {{person.name}}
-</p>
+<div class="container">
+    <h1>{{title}}</h1>
+
+
+    <div class="mdl-grid">
+
+        <div class="mdl-cell mdl-cell--5-col">
+            <div class="form-group">
+                <mdl-textfield label="Name" type="text" floating-label [(ngModel)]="person.name"
+                               required></mdl-textfield>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="form-group">
+
+                <mdl-textfield
+                        [(ngModel)]="person.email"
+                        label="Email"
+                        name="email"
+                        type="text"
+                        floating-label
+                        pattern="^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$"
+                        error-msg="Please provide a correct email!"></mdl-textfield>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col">
+            <mdl-textfield label="GebJahr" type="number" floating-label [(ngModel)]="person.birthdayyear"
+                           required></mdl-textfield>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col">
+            <mdl-textfield label="GebMonat" type="number" floating-label [(ngModel)]="person.birthdaymonth"
+                           required></mdl-textfield>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col">
+            <mdl-textfield label="GebTag" type="number" floating-label [(ngModel)]="person.birthdayday"
+                           required></mdl-textfield>
+        </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+    </div>
+
+    <button type="submit" class="btn btn-default" (click)="onSubmit()">Submit</button>
+</div>
